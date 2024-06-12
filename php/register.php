@@ -1,28 +1,29 @@
 <?php
-
 include 'config.php';
 
 if (isset($_POST['submit'])) {
-
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
-    $user_type = $_POST['user_type'];
+    $password = $_POST['password']; // Plain text password
 
-    $select_users = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$pass'") or die('query failed');
-
-    if ($pass != $cpass) {
-        $message[] = 'confirm password not matched!';
-    } elseif (mysqli_num_rows($select_users) > 0) {
-        $message[] = 'user already exist!';
+    // Validate password requirements
+    if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)  || !preg_match('/[0-9]/', $password)     || !preg_match('/[a-z]/', $password)) {
+        $message[] = 'Password must be at least 8 characters long and contain both upper case and lower case and at least one number';
     } else {
-        mysqli_query($conn, "INSERT INTO users(name, email, password, user_type) VALUES('$name', '$email', '$cpass', '$user_type')") or die('query failed');
-        $message[] = 'registered successfully!';
-        //header('location:login.php');
+        $hashedPassword = mysqli_real_escape_string($conn, md5($password));
+        $user_type = $_POST['user_type'];
+
+        $select_users = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'") or die('query failed');
+
+        if (mysqli_num_rows($select_users) > 0) {
+            $message[] = 'User already exists!';
+        } else {
+            mysqli_query($conn, "INSERT INTO users(name, email, password, user_type) VALUES('$name', '$email', '$hashedPassword', '$user_type')") or die('query failed');
+            $message[] = 'Registered successfully!';
+            //header('location:login.php');
+        }
     }
 }
-
 ?>
 
 <!DOCTYPE html>

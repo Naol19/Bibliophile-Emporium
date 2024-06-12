@@ -1,16 +1,31 @@
 <?php
 include 'config.php';
 
+session_start();
+
 if (isset($_POST['submit'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = $_POST['password']; // Plain text password
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+     // Plain text password
+
+    $email= $_POST['email'];
+    // validate email
+if( empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $message[]=" please enter valid email ";
+}
+else{
+$email = mysqli_real_escape_string($conn, $_POST['email']);
 
     // Validate password requirements
-    if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password)  || !preg_match('/[0-9]/', $password)     || !preg_match('/[a-z]/', $password)) {
-        $message[] = 'Password must be at least 8 characters long and contain both upper case and lower case and at least one number';
-    } else {
-        $hashedPassword = mysqli_real_escape_string($conn, md5($password));
+    if (strlen($password) >= 8 && preg_match('/[A-Z]/', $password)  && preg_match('/[0-9]/', $password) && preg_match('/[a-z]/', $password))
+        {
+            $hashedPassword = mysqli_real_escape_string($conn, md5($password ));
+            $hashedcPassword = mysqli_real_escape_string($conn, md5($cpassword ));
+            if ($hashedPassword != $hashedcPassword) {
+                $message[] = 'confirm password not matched!';
+            }
+            else{
         $user_type = $_POST['user_type'];
 
         $select_users = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'") or die('query failed');
@@ -19,11 +34,24 @@ if (isset($_POST['submit'])) {
             $message[] = 'User already exists!';
         } else {
             mysqli_query($conn, "INSERT INTO users(name, email, password, user_type) VALUES('$name', '$email', '$hashedPassword', '$user_type')") or die('query failed');
-            $message[] = 'Registered successfully!';
-            //header('location:login.php');
-        }
+            $_session['status'] = "Registered Successfully";
+            // echo '
+            // <div class="message">
+            //    <span>Registered Successfully</span>
+            //    <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+            // </div>';
+            header('location:login.php');
+    }
     }
 }
+    else{
+        $message[] = 'Password must be at least 8 characters long and contain both upper case and lower case and at least one digit';
+    }
+
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>

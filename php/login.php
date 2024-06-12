@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<body="en">
 
 <head>
     <meta charset="UTF-8">
@@ -64,7 +64,16 @@ if (isset($_POST['submit'])) {
       ';
         }
     }
+    if(isset($_SESSION['status'])) {
+        $message = $_SESSION['status'];
+    echo '
+    <div class="message">
+       <span>'.$message .'</span>
+       <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+    </div>';
+    }
     ?>
+    
 
     <div class="form-container">
 

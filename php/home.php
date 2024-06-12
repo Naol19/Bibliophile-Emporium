@@ -25,7 +25,7 @@ session_start();
 
 <body>
 
-
+<?php include 'header.php'; ?>
 
     <section class="home">
 
@@ -87,6 +87,7 @@ session_start();
 
 
 
+    <?php include 'footer.php'?>
 
     <!-- custom js file link  -->
     <!--<script src="js/script.js"></script>-->

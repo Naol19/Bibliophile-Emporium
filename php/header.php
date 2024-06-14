@@ -20,7 +20,7 @@
                 <a href="home.php">home</a>
                 <a href="#">about</a>
                 <a href="#">shop</a>
-                <a href="#">contact</a>
+                <a href="contact.php">contact</a>
                 <a href="#">orders</a>
             </nav>
 
@@ -31,11 +31,15 @@
                 <a href="#"> <i class="fas fa-shopping-cart"></i></a>
             </div>
 
-            <div class="user-box">
-                <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
-                <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
-                <a href="#" class="delete-btn">logout</a>
-            </div>
+            
+              <div class="user-box">
+            <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+            <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+            <a href="logout.php" class="delete-btn">logout</a>
+         </div>
+
+
+
         </div>
     </div>
 

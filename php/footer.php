@@ -15,7 +15,7 @@
             <a href="login.php">login</a>
             <a href="register.php">register</a>
             <a href="#">cart</a>
-            <a href="#">orders</a>
+            <a href="orders.php">orders</a>
         </div>
 
         <div class="box">

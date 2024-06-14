@@ -3,7 +3,11 @@
 include 'config.php';
 
 session_start();
+$user_id = $_SESSION['user_id'];
 
+if(!isset($user_id)){
+   header('location:login.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,6 +24,7 @@ session_start();
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/home.css">
+    
 
 </head>
 
@@ -77,7 +82,7 @@ session_start();
         <div class="content">
             <h3>have any questions?</h3>
             <p>Thank you for choosing Bibliophile Emporium. We look forward to assisting you and answering any questions you may have!</p>
-            <a href="#" class="white-btn">contact us</a>
+            <a href="contact.php" class="white-btn">contact us</a>
         </div>
 
     </section>

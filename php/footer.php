@@ -5,7 +5,7 @@
         <div class="box">
             <h3>quick links</h3>
             <a href="home.php">home</a>
-            <a href="#">about</a>
+            <a href="about.php">about</a>
             <a href="#">shop</a>
             <a href="#">contact</a>
         </div>
@@ -22,7 +22,7 @@
             <h3>contact info</h3>
             <p> <i class="fas fa-phone"></i>+251942779783</p>
             <p> <i class="fas fa-phone"></i>+251716863286</p>
-            <p> <i class="fas fa-envelope"></i>jo@jmai.com</p>
+            <p> <i class="fas fa-envelope"></i>jo@Gmai.com</p>
             <p> <i class="fas fa-map-marker-alt"></i>WOLKITE,ETHIOPIA</p>
         </div>
 

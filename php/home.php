@@ -13,7 +13,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Bibliophile Emporium</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -32,7 +32,7 @@ session_start();
         <div class="content">
             <h3>Hand Picked Book to your door</h3>
             <p>“Bibliophile Emporium” suggests a books or gathering spot for passionate book lovers"</p>
-            <a href="#" class="white-btn">discover more</a>
+            <a href="about.php" class="white-btn">discover more</a>
         </div>
 
     </section>
@@ -65,7 +65,7 @@ session_start();
             <div class="content">
                 <h3>about us</h3>
                 <p>“Bibliophile Emporium” is a bookstore catering to book enthusiasts. The name suggests a place where passionate readers gather to explore and celebrate literature. Additionally, the bookstore offers a convenient service: book delivery directly to customers.</p>
-                <a href="#" class="btn">read more</a>
+                <a href="about.php" class="btn">read more</a>
             </div>
 
         </div>
@@ -90,7 +90,7 @@ session_start();
     <?php include 'footer.php'?>
 
     <!-- custom js file link  -->
-    <!--<script src="js/script.js"></script>-->
+    <script src="js/script.js"></script>
 
 </body>
 

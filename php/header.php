@@ -21,7 +21,7 @@
                 <a href="about.php">about</a>
                 <a href="#">shop</a>
                 <a href="contact.php">contact</a>
-                <a href="#">orders</a>
+                <a href="orders.php">orders</a>
             </nav>
 
             <div class="icons">

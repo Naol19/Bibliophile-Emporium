@@ -26,17 +26,17 @@
 
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
-                <a href="#" class="fas fa-search"></a>
+                <a href="search_page.php" class="fas fa-search"></a>
                 <div id="user-btn" class="fas fa-user"></div>
                 <a href="#"> <i class="fas fa-shopping-cart"></i></a>
             </div>
 
             
-              <div class="user-box">
+            <div class="user-box">
             <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">logout</a>
-         </div>
+            </div>
 
 
 

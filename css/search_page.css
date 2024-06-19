@@ -1,0 +1,106 @@
+@import url("general.css");
+@import url("header.css");
+@import url("footer.css");
+
+.heading {
+  min-height: 30vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: url(../images/heading-bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.heading h3 {
+  font-size: 5rem;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.heading p {
+  font-size: 2.5rem;
+  color: var(--light-color);
+}
+
+.heading p a {
+  color: var(--purple);
+}
+
+.heading p a:hover {
+  text-decoration: underline;
+}
+
+.products .box-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  align-items: flex-start;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.search-form form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  border: var(--border);
+  font-size: 2rem;
+  color: var(--black);
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+}
+
+.products .box-container .box {
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+  position: relative;
+}
+
+.products .box-container .box .image {
+  height: 30rem;
+}
+
+.products .box-container .box .name {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.products .box-container .box .qty {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.5rem;
+  border: var(--border);
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.products .box-container .box .price {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 2.5rem;
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.search-form form {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.search-form form .btn {
+  margin-top: 0;
+}

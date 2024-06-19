@@ -125,7 +125,7 @@ if(isset($_POST['order_btn'])){
          </div>
          <div class="inputBox">
             <span>Woreda:</span>
-            <input type="number" min="0" name="flat" required placeholder="e.g.Gubre">
+            <input type="text" min="0" name="flat" required placeholder="e.g.Gubre">
          </div>
          <div class="inputBox">
             <span>Zone:</span>

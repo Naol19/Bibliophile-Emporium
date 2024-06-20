@@ -32,7 +32,7 @@
 
 .show-products .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
+  grid-template-columns: repeat(auto-fit, 33rem);
   justify-content: center;
   gap: 1.5rem;
   max-width: 1200px;

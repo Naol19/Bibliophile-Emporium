@@ -18,7 +18,6 @@
   box-shadow: var(--box-shadow);
   border-radius: 0.5rem;
   overflow-x: scroll;
-  
 }
 
 .orders .box-container .box p {
